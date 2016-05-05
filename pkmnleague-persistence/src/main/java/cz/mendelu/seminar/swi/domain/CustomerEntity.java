@@ -6,6 +6,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author smonty
+ * @author vit
  */
 @Entity
 public class CustomerEntity {
