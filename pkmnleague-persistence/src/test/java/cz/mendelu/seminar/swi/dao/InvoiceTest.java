@@ -18,6 +18,7 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.annotation.Transactional;
 import org.testng.annotations.Test;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -26,7 +27,7 @@ import org.testng.annotations.Test;
 @ContextConfiguration(classes = EmbeddedDerbyDatabase.class)
 @TestExecutionListeners(TransactionalTestExecutionListener.class)
 @Transactional
-public class InvoiceEntityTest extends AbstractTestNGSpringContextTests
+public class InvoiceTest extends AbstractTestNGSpringContextTests
 {
     @Autowired
     private IInvoice iinvoice;
