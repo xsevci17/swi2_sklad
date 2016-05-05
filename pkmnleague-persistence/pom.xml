@@ -12,7 +12,7 @@
     <artifactId>pkmnleague-persistence</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>DAO Layer</name>
+    <name>SWI-persistence</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
