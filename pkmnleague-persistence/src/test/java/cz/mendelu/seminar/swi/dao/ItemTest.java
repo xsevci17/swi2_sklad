@@ -7,6 +7,8 @@ package cz.mendelu.seminar.swi.dao;
 
 
 import cz.mendelu.seminar.swi.domain.IssueSlipEntity;
+import cz.mendelu.seminar.swi.domain.ItemEntity;
+import cz.mendelu.seminar.swi.domain.ProductEntity;
 import cz.mendelu.seminar.swi.domain.WarehouseCardEntity;
 import cz.mendelu.seminar.swi.domain.WarehousemanEntity;
 import cz.mendelu.seminar.swi.utils.EmbeddedDerbyDatabase;
@@ -19,39 +21,37 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.annotation.Transactional;
 import org.testng.annotations.Test;
-
-
 /**
+ * 
  * @author pirochta.jiri@gmail.com
- * @author Vít
  */
 @ContextConfiguration(classes = EmbeddedDerbyDatabase.class)
 @TestExecutionListeners(TransactionalTestExecutionListener.class)
 @Transactional
-public class IssueSlipTest extends AbstractTestNGSpringContextTests
+public class ItemTest extends AbstractTestNGSpringContextTests
 {
     @Autowired
-    private IIssueSlip iissueslip;
+    private IItem iitem;
 	
     @Test
     public void testSave() {
 		WarehousemanEntity wareMan = new WarehousemanEntity(new Date(), new Date());
         WarehouseCardEntity wareCard = new WarehouseCardEntity(wareMan,new Date());
         IssueSlipEntity issueSlip = new IssueSlipEntity(wareCard, wareMan,new Date());
+		ProductEntity productEntity = new ProductEntity("ProductTitle","ProductType","productdescription");
+		ItemEntity itemEntity = new ItemEntity(issueSlip, productEntity, "Unit", 20.0, "Item Nane");
 	  
-	iissueslip.save(issueSlip);
+	iitem.save(itemEntity);
 	   
-	IssueSlipEntity result = iissueslip.findById(issueSlip.getId_issueSlip());
-        assertEquals(issueSlip, result);
+	ItemEntity result = iitem.findById(itemEntity.getId_item());
+        assertEquals(itemEntity, result);
 
-        Date tmpDate = new Date();
         
-        issueSlip.setDateOfCreation(tmpDate);
-        iissueslip.save(issueSlip);
+        itemEntity.setUnit("Unit");
+        iitem.save(itemEntity);
 
-        IssueSlipEntity resultUpdate = iissueslip.findById(issueSlip.getId_issueSlip());
-        assertEquals(resultUpdate.getDateOfCreation(), tmpDate);
-	
+        ItemEntity resultUpdate = iitem.findById(itemEntity.getId_item());
+        assertEquals(resultUpdate.getUnit(), "Unit");
     }
 	
     @Test
@@ -59,12 +59,13 @@ public class IssueSlipTest extends AbstractTestNGSpringContextTests
 		WarehousemanEntity wareMan = new WarehousemanEntity(new Date(), new Date());
         WarehouseCardEntity wareCard = new WarehouseCardEntity(wareMan,new Date());
         IssueSlipEntity issueSlip = new IssueSlipEntity(wareCard, wareMan,new Date());
+		ProductEntity productEntity = new ProductEntity("ProductTitle","ProductType","productdescription");
+		ItemEntity itemEntity = new ItemEntity(issueSlip, productEntity, "Unit", 20.0, "Item Nane");
 
-        iissueslip.save(issueSlip);
-        iissueslip.delete(issueSlip);
+        iitem.save(itemEntity);
+        iitem.delete(itemEntity);
 
-        assertEquals(0, iissueslip.findAll().size());
-        
+        assertEquals(0, iitem.findAll().size());
     }
 	
 	  
@@ -73,11 +74,11 @@ public class IssueSlipTest extends AbstractTestNGSpringContextTests
 		WarehousemanEntity wareMan = new WarehousemanEntity(new Date(), new Date());
         WarehouseCardEntity wareCard = new WarehouseCardEntity(wareMan,new Date());
         IssueSlipEntity issueSlip = new IssueSlipEntity(wareCard, wareMan,new Date());
+		ProductEntity productEntity = new ProductEntity("ProductTitle","ProductType","productdescription");
+		ItemEntity itemEntity = new ItemEntity(issueSlip, productEntity, "Unit", 20.0, "Item Nane");
 
-        iissueslip.save(issueSlip);
+        iitem.save(itemEntity);
 
-        assertEquals(1, iissueslip.findAll().size());
-        
+        assertEquals(1, iitem.findAll().size());
     }
 }
-

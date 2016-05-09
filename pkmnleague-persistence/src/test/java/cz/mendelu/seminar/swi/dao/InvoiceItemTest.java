@@ -5,10 +5,13 @@
  */
 package cz.mendelu.seminar.swi.dao;
 
+import cz.mendelu.seminar.swi.domain.AddressEntity;
 import cz.mendelu.seminar.swi.domain.CustomerEntity;
+import cz.mendelu.seminar.swi.domain.InvoiceEntity;
+import cz.mendelu.seminar.swi.domain.InvoiceItemEntity;
+import cz.mendelu.seminar.swi.domain.ProductEntity;
 import cz.mendelu.seminar.swi.utils.EmbeddedDerbyDatabase;
 import java.util.Date;
-import static org.junit.Assert.assertEquals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
@@ -19,7 +22,7 @@ import org.testng.annotations.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- *
+ * @author pirochta.jiri@gmail.com
  * @author Vít
  */
 @ContextConfiguration(classes = EmbeddedDerbyDatabase.class)
@@ -28,53 +31,55 @@ import static org.junit.Assert.assertEquals;
 public class InvoiceItemTest extends AbstractTestNGSpringContextTests
 {
     @Autowired
-    private IInvoiceItem iiinvoiceitem;
+    private IInvoiceItem iinvoiceitem;
 	
     @Test
     public void testSave() {
-        /*AddressEntity adr = new AddressEntity("Brno","Hlavní",44);
+        AddressEntity adr = new AddressEntity("Brno","Hlavní",44);
         CustomerEntity cust = new CustomerEntity(adr,"Brno","Hlavní",new Date(), 569);
-        InvoiceEntity invoice = new InvoiceEntity(cust, new Date());
+        InvoiceEntity inv = new InvoiceEntity(cust, new Date());
+        ProductEntity prod = new ProductEntity("Title","type","Desc");
+        InvoiceItemEntity invoice = new InvoiceItemEntity(inv, prod, "Unit", 50.0, "description");
 	  
-	iinvoice.save(invoice);
+	iinvoiceitem.save(invoice);
 	   
-	InvoiceEntity result = iinvoice.findById(invoice.getId_invoice());
+	InvoiceItemEntity result = iinvoiceitem.findById(invoice.getId_invoiceItem());
         assertEquals(invoice, result);
 
-        Date tmpDate = new Date();
-        
-        invoice.setDateOfCreation(tmpDate);
-        iinvoice.save(invoice);
+        invoice.setUnit("Unit");
+        iinvoiceitem.save(invoice);
 
-        InvoiceEntity resultUpdate = iinvoice.findById(invoice.getId_invoice());
-        assertEquals(resultUpdate.getDateOfCreation(), tmpDate);
-	*/  
+        InvoiceItemEntity resultUpdate = iinvoiceitem.findById(invoice.getId_invoiceItem());
+        assertEquals(resultUpdate.getUnit(), "Unit");
+	  
     }
 	
     @Test
     public void testDelete() {
-        /*AddressEntity adr = new AddressEntity("Brno","Hlavní",44);
+        AddressEntity adr = new AddressEntity("Brno","Hlavní",44);
         CustomerEntity cust = new CustomerEntity(adr,"Brno","Hlavní",new Date(), 569);
-        InvoiceEntity invoice = new InvoiceEntity(cust, new Date());
+        InvoiceEntity inv = new InvoiceEntity(cust, new Date());
+        ProductEntity prod = new ProductEntity("Title","type","Desc");
+        InvoiceItemEntity invoice = new InvoiceItemEntity(inv, prod, "Unit", 50.0, "description");
 
-        iinvoice.save(invoice);
-        iinvoice.delete(invoice);
+        iinvoiceitem.save(invoice);
+        iinvoiceitem.delete(invoice);
 
-        assertEquals(0, iinvoice.findAll().size());
-        */
+        assertEquals(0, iinvoiceitem.findAll().size());
     }
 	
 	  
    @Test
    public void testFindAll() {
-        /*AddressEntity adr = new AddressEntity("Brno","Hlavní",44);
+        AddressEntity adr = new AddressEntity("Brno","Hlavní",44);
         CustomerEntity cust = new CustomerEntity(adr,"Brno","Hlavní",new Date(), 569);
-        InvoiceEntity invoice = new InvoiceEntity(cust, new Date());
+        InvoiceEntity inv = new InvoiceEntity(cust, new Date());
+        ProductEntity prod = new ProductEntity("Title","type","Desc");
+        InvoiceItemEntity invoice = new InvoiceItemEntity(inv, prod, "Unit", 50.0, "description");
 
-        iinvoice.save(invoice);
+        iinvoiceitem.save(invoice);
 
-        assertEquals(1, iinvoice.findAll().size());
-        */
+        assertEquals(1, iinvoiceitem.findAll().size());
     }
 }
 

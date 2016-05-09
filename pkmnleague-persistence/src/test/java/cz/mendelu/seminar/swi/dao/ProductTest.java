@@ -14,9 +14,7 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 import org.springframework.transaction.annotation.Transactional;
 import org.testng.annotations.Test;
 import cz.mendelu.seminar.swi.utils.EmbeddedDerbyDatabase;
-
 import static org.junit.Assert.*;
-import cz.mendelu.seminar.swi.dao.IProduct;
 
 
 /**

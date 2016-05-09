@@ -47,8 +47,7 @@ public class PersonEntity {
     
     }
    
-    public PersonEntity(int id_person, AddressEntity id_address, String name, String surname, Date dateOfBirth) {
-        this.id_person = id_person;
+    public PersonEntity(AddressEntity id_address, String name, String surname, Date dateOfBirth) {
         this.id_address = id_address;
         this.name = name;
         this.surname = surname;

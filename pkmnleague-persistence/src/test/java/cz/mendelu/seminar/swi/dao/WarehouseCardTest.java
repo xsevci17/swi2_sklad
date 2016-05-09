@@ -6,7 +6,6 @@
 package cz.mendelu.seminar.swi.dao;
 
 
-import cz.mendelu.seminar.swi.domain.IssueSlipEntity;
 import cz.mendelu.seminar.swi.domain.WarehouseCardEntity;
 import cz.mendelu.seminar.swi.domain.WarehousemanEntity;
 import cz.mendelu.seminar.swi.utils.EmbeddedDerbyDatabase;
@@ -19,52 +18,45 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.annotation.Transactional;
 import org.testng.annotations.Test;
-
-
 /**
+ * 
  * @author pirochta.jiri@gmail.com
- * @author Vít
  */
 @ContextConfiguration(classes = EmbeddedDerbyDatabase.class)
 @TestExecutionListeners(TransactionalTestExecutionListener.class)
 @Transactional
-public class IssueSlipTest extends AbstractTestNGSpringContextTests
+public class WarehouseCardTest extends AbstractTestNGSpringContextTests
 {
     @Autowired
-    private IIssueSlip iissueslip;
+    private IWarehouseCard iwarehouseCard;
 	
     @Test
     public void testSave() {
 		WarehousemanEntity wareMan = new WarehousemanEntity(new Date(), new Date());
         WarehouseCardEntity wareCard = new WarehouseCardEntity(wareMan,new Date());
-        IssueSlipEntity issueSlip = new IssueSlipEntity(wareCard, wareMan,new Date());
 	  
-	iissueslip.save(issueSlip);
+	iwarehouseCard.save(wareCard);
 	   
-	IssueSlipEntity result = iissueslip.findById(issueSlip.getId_issueSlip());
-        assertEquals(issueSlip, result);
+	WarehouseCardEntity result = iwarehouseCard.findById(wareCard.getId_warehouseCard());
+        assertEquals(wareCard, result);
 
         Date tmpDate = new Date();
-        
-        issueSlip.setDateOfCreation(tmpDate);
-        iissueslip.save(issueSlip);
+        wareCard.setDateOfCreation(tmpDate);
+        iwarehouseCard.save(wareCard);
 
-        IssueSlipEntity resultUpdate = iissueslip.findById(issueSlip.getId_issueSlip());
+        WarehouseCardEntity resultUpdate = iwarehouseCard.findById(wareCard.getId_warehouseCard());
         assertEquals(resultUpdate.getDateOfCreation(), tmpDate);
-	
     }
 	
     @Test
     public void testDelete() {
 		WarehousemanEntity wareMan = new WarehousemanEntity(new Date(), new Date());
         WarehouseCardEntity wareCard = new WarehouseCardEntity(wareMan,new Date());
-        IssueSlipEntity issueSlip = new IssueSlipEntity(wareCard, wareMan,new Date());
 
-        iissueslip.save(issueSlip);
-        iissueslip.delete(issueSlip);
+        iwarehouseCard.save(wareCard);
+        iwarehouseCard.delete(wareCard);
 
-        assertEquals(0, iissueslip.findAll().size());
-        
+        assertEquals(0, iwarehouseCard.findAll().size());
     }
 	
 	  
@@ -72,12 +64,9 @@ public class IssueSlipTest extends AbstractTestNGSpringContextTests
    public void testFindAll() {
 		WarehousemanEntity wareMan = new WarehousemanEntity(new Date(), new Date());
         WarehouseCardEntity wareCard = new WarehouseCardEntity(wareMan,new Date());
-        IssueSlipEntity issueSlip = new IssueSlipEntity(wareCard, wareMan,new Date());
 
-        iissueslip.save(issueSlip);
+        iwarehouseCard.save(wareCard);
 
-        assertEquals(1, iissueslip.findAll().size());
-        
+        assertEquals(1, iwarehouseCard.findAll().size());
     }
 }
-

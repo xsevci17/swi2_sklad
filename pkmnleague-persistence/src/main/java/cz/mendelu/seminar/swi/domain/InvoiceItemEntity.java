@@ -45,6 +45,15 @@ public class InvoiceItemEntity {
 	
     private String description;
 	
+	
+    public InvoiceItemEntity(InvoiceEntity id_invoice, ProductEntity id_product, String unit, Double amount, String description) {
+        this.id_invoice = id_invoice;
+        this.id_product = id_product;
+        this.unit = unit;
+		this.amount = amount;
+		this.description = description;
+    }
+	
     /**
      *
      * @param obj

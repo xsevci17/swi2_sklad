@@ -30,8 +30,7 @@ public class WarehousemanEntity {
         
     }
 	
-    public  WarehousemanEntity(int id_warehouseman, Date startDate, Date endDate) {
-        this.id_warehouseman = id_warehouseman;
+    public  WarehousemanEntity(Date startDate, Date endDate) {
         this.startDate = startDate;
         this.endDate = endDate;
     }

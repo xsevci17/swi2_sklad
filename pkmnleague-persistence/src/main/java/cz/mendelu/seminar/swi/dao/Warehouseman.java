@@ -63,7 +63,7 @@ public class Warehouseman implements IWarehouseman {
 	@Override
 	public List<WarehousemanEntity> findAll(){
         try {
-            return entityManager.createQuery("select c from Warehouseman c", WarehousemanEntity.class).getResultList();
+            return entityManager.createQuery("select c from WarehousemanEntity c", WarehousemanEntity.class).getResultList();
         } catch (Exception e) {
             throw new DaoLayerException(e.getMessage());
         }

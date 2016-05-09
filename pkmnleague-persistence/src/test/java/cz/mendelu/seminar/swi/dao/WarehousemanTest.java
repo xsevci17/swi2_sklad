@@ -6,8 +6,6 @@
 package cz.mendelu.seminar.swi.dao;
 
 
-import cz.mendelu.seminar.swi.domain.IssueSlipEntity;
-import cz.mendelu.seminar.swi.domain.WarehouseCardEntity;
 import cz.mendelu.seminar.swi.domain.WarehousemanEntity;
 import cz.mendelu.seminar.swi.utils.EmbeddedDerbyDatabase;
 import java.util.Date;
@@ -19,65 +17,52 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.annotation.Transactional;
 import org.testng.annotations.Test;
-
-
 /**
+ * 
  * @author pirochta.jiri@gmail.com
- * @author Vít
  */
 @ContextConfiguration(classes = EmbeddedDerbyDatabase.class)
 @TestExecutionListeners(TransactionalTestExecutionListener.class)
 @Transactional
-public class IssueSlipTest extends AbstractTestNGSpringContextTests
+public class WarehousemanTest extends AbstractTestNGSpringContextTests
 {
     @Autowired
-    private IIssueSlip iissueslip;
+    private IWarehouseman iwarehouseman;
 	
     @Test
     public void testSave() {
 		WarehousemanEntity wareMan = new WarehousemanEntity(new Date(), new Date());
-        WarehouseCardEntity wareCard = new WarehouseCardEntity(wareMan,new Date());
-        IssueSlipEntity issueSlip = new IssueSlipEntity(wareCard, wareMan,new Date());
 	  
-	iissueslip.save(issueSlip);
+	iwarehouseman.save(wareMan);
 	   
-	IssueSlipEntity result = iissueslip.findById(issueSlip.getId_issueSlip());
-        assertEquals(issueSlip, result);
+	WarehousemanEntity result = iwarehouseman.findById(wareMan.getId_warehouseman());
+        assertEquals(wareMan, result);
 
         Date tmpDate = new Date();
-        
-        issueSlip.setDateOfCreation(tmpDate);
-        iissueslip.save(issueSlip);
+        wareMan.setEndDate(tmpDate);
+        iwarehouseman.save(wareMan);
 
-        IssueSlipEntity resultUpdate = iissueslip.findById(issueSlip.getId_issueSlip());
-        assertEquals(resultUpdate.getDateOfCreation(), tmpDate);
-	
+        WarehousemanEntity resultUpdate = iwarehouseman.findById(wareMan.getId_warehouseman());
+        assertEquals(resultUpdate.getEndDate(), tmpDate);
     }
 	
     @Test
     public void testDelete() {
 		WarehousemanEntity wareMan = new WarehousemanEntity(new Date(), new Date());
-        WarehouseCardEntity wareCard = new WarehouseCardEntity(wareMan,new Date());
-        IssueSlipEntity issueSlip = new IssueSlipEntity(wareCard, wareMan,new Date());
 
-        iissueslip.save(issueSlip);
-        iissueslip.delete(issueSlip);
+        iwarehouseman.save(wareMan);
+        iwarehouseman.delete(wareMan);
 
-        assertEquals(0, iissueslip.findAll().size());
-        
+        assertEquals(0, iwarehouseman.findAll().size());
     }
 	
 	  
    @Test
    public void testFindAll() {
 		WarehousemanEntity wareMan = new WarehousemanEntity(new Date(), new Date());
-        WarehouseCardEntity wareCard = new WarehouseCardEntity(wareMan,new Date());
-        IssueSlipEntity issueSlip = new IssueSlipEntity(wareCard, wareMan,new Date());
 
-        iissueslip.save(issueSlip);
+        iwarehouseman.save(wareMan);
 
-        assertEquals(1, iissueslip.findAll().size());
-        
+        assertEquals(1, iwarehouseman.findAll().size());
     }
 }
-

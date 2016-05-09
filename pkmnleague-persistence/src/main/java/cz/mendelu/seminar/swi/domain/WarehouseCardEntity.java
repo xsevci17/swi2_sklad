@@ -42,8 +42,7 @@ public class WarehouseCardEntity {
         
     }
 	
-    public  WarehouseCardEntity(int id_warehouseCard, WarehousemanEntity id_warehouseman, Date dateOfCreation) {
-        this.id_warehouseCard = id_warehouseCard;
+    public  WarehouseCardEntity(WarehousemanEntity id_warehouseman, Date dateOfCreation) {
         this.id_warehouseman = id_warehouseman;
         this.dateOfCreation = dateOfCreation;
     }

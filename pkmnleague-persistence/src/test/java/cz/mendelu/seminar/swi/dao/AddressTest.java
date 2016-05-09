@@ -5,7 +5,6 @@
  */
 package cz.mendelu.seminar.swi.dao;
 
-import cz.mendelu.seminar.swi.dao.IAddress;
 import cz.mendelu.seminar.swi.domain.AddressEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;

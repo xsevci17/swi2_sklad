@@ -5,7 +5,6 @@
  */
 package cz.mendelu.seminar.swi.dao;
 
-import cz.mendelu.seminar.swi.dao.ICustomer;
 import cz.mendelu.seminar.swi.domain.AddressEntity;
 import cz.mendelu.seminar.swi.domain.CustomerEntity;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -10,7 +10,6 @@ import cz.mendelu.seminar.swi.domain.InvoiceEntity;
 import cz.mendelu.seminar.swi.domain.CustomerEntity;
 import cz.mendelu.seminar.swi.utils.EmbeddedDerbyDatabase;
 import java.util.Date;
-import static org.junit.Assert.assertEquals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
