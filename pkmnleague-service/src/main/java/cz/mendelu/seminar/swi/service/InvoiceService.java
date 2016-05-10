@@ -1,4 +1,4 @@
-package cz.fi.muni.pa165.seminar.pkmnleague.service;
+package cz.mendelu.seminar.swi.service;
 
 
 import cz.mendelu.seminar.swi.domain.InvoiceEntity;

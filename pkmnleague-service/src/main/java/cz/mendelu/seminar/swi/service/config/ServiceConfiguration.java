@@ -1,4 +1,4 @@
-package cz.fi.muni.pa165.seminar.pkmnleague.service.config;
+package cz.mendelu.seminar.swi.service.config;
 
 import cz.mendelu.seminar.swi.utils.EmbeddedDerbyDatabase;
 import org.dozer.DozerBeanMapper;

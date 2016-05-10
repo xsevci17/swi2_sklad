@@ -1,4 +1,4 @@
-package cz.fi.muni.pa165.seminar.pkmnleague.exceptions;
+package cz.mendelu.seminar.swi.exceptions;
 
 /**
  * @author Pavel Kouřil <pk@pavelkouril.cz>

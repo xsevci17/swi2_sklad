@@ -1,6 +1,6 @@
-package cz.fi.muni.pa165.seminar.pkmnleague.service;
+package cz.mendelu.seminar.swi.service;
 
-import cz.fi.muni.pa165.seminar.pkmnleague.exceptions.PokemonLeagueServiceException;
+import cz.mendelu.seminar.swi.exceptions.PokemonLeagueServiceException;
 import cz.mendelu.seminar.swi.dao.Item;
 import cz.mendelu.seminar.swi.domain.ItemEntity;
 
