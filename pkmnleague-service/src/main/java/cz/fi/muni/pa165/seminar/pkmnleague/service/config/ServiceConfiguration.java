@@ -1,6 +1,6 @@
 package cz.fi.muni.pa165.seminar.pkmnleague.service.config;
 
-import cz.fi.muni.pa165.seminar.pkmnleague.utils.EmbeddedDerbyDatabase;
+import cz.mendelu.seminar.swi.utils.EmbeddedDerbyDatabase;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 import org.springframework.context.annotation.Bean;

@@ -41,11 +41,13 @@
     </dependencyManagement>
 
     <modules>
-        <module>pkmnleague-persistence</module>
-        <module>pkmnleague-service</module>
+        <!--
         <module>pkmnleague-api</module>
         <module>pkmnleague-web</module>
         <module>pkmnleague-data</module>
         <module>pkmnleague-rest</module>
+        -->
+        <module>pkmnleague-service</module>
+        <module>pkmnleague-persistence</module>
     </modules>
 </project>
