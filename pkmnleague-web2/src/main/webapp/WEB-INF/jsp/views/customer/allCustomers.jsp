@@ -4,7 +4,6 @@
     Author     : smonty
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -15,6 +14,7 @@
     </head>
     <body>
         <h1>all customers</h1>
+        
         
         <c:forEach iteme="${customers}" var="cus">
             <p>name = <c:out value="${cus.name}" /></p>

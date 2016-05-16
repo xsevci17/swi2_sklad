@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/customer")
 public class CustomerController {
     
-    @ModelAttribute("gym")
-    public CustomerEntity getGym() {
+    @ModelAttribute("customer")
+    public CustomerEntity getCustomer() {
         return new CustomerEntity();
     }
     
@@ -27,7 +27,12 @@ public class CustomerController {
     @RequestMapping(value = "/allCustomers", method = RequestMethod.GET)
     public String customers(Model model) {
         model.addAttribute("customers", customerFacade.findAll());
-        return "customer/list";
+        return "customer/allCustomers";
+    }
+    
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String test(Model model) {
+        return "customer/test";
     }
     
 }

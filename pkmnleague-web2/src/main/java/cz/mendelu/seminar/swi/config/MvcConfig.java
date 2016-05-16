@@ -22,6 +22,7 @@ import javax.validation.Validator;
 @Configuration
 // @Import({SampleDataConfig.class})
 @ComponentScan(basePackages = "cz.fi.muni.pa165.seminar.pkmnleague.mvc")
+//@ComponentScan(basePackages = "cz.mendelu.seminar.swi.controllers")
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
     @Override
