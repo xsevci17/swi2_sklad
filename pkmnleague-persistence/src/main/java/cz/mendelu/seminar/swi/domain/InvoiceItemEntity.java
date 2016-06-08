@@ -45,6 +45,9 @@ public class InvoiceItemEntity {
 	
     private String description;
 	
+    public InvoiceItemEntity() {
+        
+    }
 	
     public InvoiceItemEntity(InvoiceEntity id_invoice, ProductEntity id_product, String unit, Double amount, String description) {
         this.id_invoice = id_invoice;

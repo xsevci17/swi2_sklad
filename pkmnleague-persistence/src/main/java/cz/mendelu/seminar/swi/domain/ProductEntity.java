@@ -37,6 +37,10 @@ public class ProductEntity {
     @Column(nullable = false)
     private String description;
 
+    public ProductEntity() {
+        
+    }
+    
     public ProductEntity(String title, String type, String description) {
         this.title = title;
         this.type = type;

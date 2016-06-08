@@ -45,7 +45,11 @@ public class ItemEntity {
     private Double amount;
 	
     private String itemName;
-	
+
+    public ItemEntity() {
+        
+    }
+    
     public ItemEntity(IssueSlipEntity isueSlip, ProductEntity product, String unit, Double amount, String itemName) {
         this.id_issueSlip = isueSlip;
         this.id_product = product;

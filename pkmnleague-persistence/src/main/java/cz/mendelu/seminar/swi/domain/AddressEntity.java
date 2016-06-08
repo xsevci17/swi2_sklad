@@ -27,6 +27,10 @@ public class AddressEntity {
     @NotNull
     private int houseNumber;
     
+    public AddressEntity() {
+        
+    }
+    
     public AddressEntity(String city, String street, int houseNumber) {
         this.city = city;
         this.street = street;

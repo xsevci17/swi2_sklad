@@ -10,14 +10,16 @@
 
     <artifactId>pkmnleague-data</artifactId>
 
-    <name>Sample data</name>
+    <name>SWI-sampledata</name>
 
     <dependencies>
+        <!--
         <dependency>
             <groupId>cz.fi.muni.pa165.seminar.pkmnleague</groupId>
             <artifactId>pkmnleague-api</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        -->
         <dependency>
             <groupId>cz.fi.muni.pa165.seminar.pkmnleague</groupId>
             <artifactId>pkmnleague-service</artifactId>

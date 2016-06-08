@@ -29,7 +29,11 @@ public class InvoiceEntity {
 	
     @NotNull
     private Date dateOfCreation;
-	
+
+    public InvoiceEntity() {
+        
+    }
+    
     public InvoiceEntity(CustomerEntity cust, Date dateOfCreation) {
         this.id_customer = cust;
         this.dateOfCreation = dateOfCreation;

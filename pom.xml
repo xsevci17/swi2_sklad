@@ -18,7 +18,7 @@
         </plugins>
     </build>
     <packaging>pom</packaging>
-    <name>Pokemon League Project</name>
+    <name>SWI</name>
 
     <parent>
         <groupId>io.spring.platform</groupId>
@@ -44,9 +44,11 @@
         <module>pkmnleague-web</module>
         <module>pkmnleague-data</module>
         <module>pkmnleague-rest</module>
+        <module>pkmnleague-web2</module>
         -->
+        <module>pkmnleague-data</module>
         <module>pkmnleague-service</module>
         <module>pkmnleague-persistence</module>
-        <module>pkmnleague-web2</module>
-  </modules>
+        <module>pkmnleague-web3</module>
+    </modules>
 </project>
